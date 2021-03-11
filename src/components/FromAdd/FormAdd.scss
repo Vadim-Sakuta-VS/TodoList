@@ -1,0 +1,43 @@
+.form-add {
+  display: flex;
+
+  &__input {
+    flex-basis: 83%;
+  }
+
+  &__btn {
+    flex-basis: 17%;
+    margin-left: 20px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+    }
+  }
+}
+
+.input {
+  font-size: 20px;
+  padding: 0 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: .2s;
+
+  &::placeholder {
+    transition: inherit;
+  }
+
+  &:hover::placeholder, &:focus::placeholder {
+    color: #333333;
+  }
+
+  &:focus {
+    border-color: #9c4dca;
+  }
+
+  &--error {
+    border-color: #ff0000;
+  }
+}
