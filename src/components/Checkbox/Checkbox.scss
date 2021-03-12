@@ -1,0 +1,33 @@
+.checkbox {
+  display: none;
+
+  & + &-label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9c4dca;
+    border-radius: 2px;
+    transition: .2s;
+    outline: none;
+
+    &:focus-visible {
+      box-shadow: 0 0 10px 0 #9c4dca;
+    }
+  }
+
+  &:checked + &-label {
+    background-color: #9c4dca;
+  }
+
+  &-label svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    opacity: 0;
+    transition: .2s;
+  }
+
+  &:checked + &-label svg {
+    opacity: 1;
+  }
+}

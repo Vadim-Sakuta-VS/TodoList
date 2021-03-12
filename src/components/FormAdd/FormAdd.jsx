@@ -18,7 +18,10 @@ const FormAdd = ({addTodo}) => {
     }
 
     const onFocusHandler = (e) => {
-        e.target.classList.remove('input--error');
+        if (e.target.classList.contains('input--error')) {
+            e.target.classList.remove('input--error');
+            setValue('');
+        }
     }
 
     const submitHandler = (e) => {
@@ -30,6 +33,7 @@ const FormAdd = ({addTodo}) => {
             setValue('');
         } else {
             e.target['todo'].classList.add('input--error');
+            setValue('Can not be empty!');
         }
     }
 

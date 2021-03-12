@@ -1,0 +1,40 @@
+.todo-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f4f4f4;
+  transition: .2s;
+
+  &:not(:first-child){
+    border-top: 2px solid #e4e4e4;
+  }
+
+  &--completed &__text {
+    text-decoration: line-through;
+  }
+
+  &--completed {
+    background-color: #d0d0d0;
+  }
+
+  &__col:first-child{
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  &__text {
+    margin-left: 12px;
+    font-size: 18px;
+  }
+
+  &__btn {
+    padding: 5px 25px;
+
+    svg {
+      width: 35px;
+      height: 35px;
+      fill: #fff;
+    }
+  }
+}
