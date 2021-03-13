@@ -9,6 +9,23 @@
     border-top: 2px solid #e4e4e4;
   }
 
+  &-enter {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: .5s;
+  }
+
+  &-exit-active {
+    opacity: 0;
+    transform: translateX(20%);
+    transition: .5s;
+  }
+
   &--completed &__text {
     text-decoration: line-through;
   }
