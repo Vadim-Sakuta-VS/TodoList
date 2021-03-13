@@ -17,6 +17,7 @@ const FormAdd = ({addTodo}) => {
 
     const onChangeHandler = (e) => {
         setValue(e.target.value);
+        isError && setIsError(false);
     }
 
     const onFocusHandler = () => {
