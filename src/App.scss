@@ -42,3 +42,23 @@ body {
     margin-top: 60px;
   }
 }
+
+@media (max-width: 1180px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    &__todo-list {
+      margin-top: 50px;
+    }
+  }
+}

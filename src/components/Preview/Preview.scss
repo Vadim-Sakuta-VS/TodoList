@@ -175,3 +175,22 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 470px) {
+  .preview {
+    &__text-symbol {
+      font-size: 40px;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .preview {
+    padding-top: 100px;
+
+    &__text-symbol {
+      font-size: 35px;
+    }
+  }
+}

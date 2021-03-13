@@ -9,3 +9,13 @@
     color: #fff;
   }
 }
+
+@media (max-width: 470px) {
+  .header {
+    padding: 20px 0;
+
+    &__title {
+      font-size: 45px;
+    }
+  }
+}

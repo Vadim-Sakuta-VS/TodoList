@@ -3,11 +3,11 @@
   display: flex;
 
   &__input {
-    flex-basis: 83%;
+    width: 83%;
   }
 
   &__btn {
-    flex-basis: 17%;
+    width: 17%;
     margin-left: 20px;
 
     svg {
@@ -75,5 +75,26 @@
   &-exit-active {
     opacity: 0;
     transition: .2s;
+  }
+}
+
+@media (max-width: 680px) {
+  .form-add {
+    &__btn {
+      min-width: 100px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .form-add {
+    &__input {
+      padding-left: 7px;
+    }
+
+    &__btn {
+      min-width: 70px;
+      margin-left: 10px;
+    }
   }
 }
