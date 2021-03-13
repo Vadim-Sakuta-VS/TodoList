@@ -24,7 +24,7 @@ const TodoItem = ({id, text, isCompleted, deleteTodo, completeTodo}) => {
     return (
         <li className={`todo-item ${isCompleted ? 'todo-item--completed' : ''}`}>
             <div className="todo-item__col">
-                <Checkbox id={checkboxId} name={checkboxId} handleOnChange={onCompleteTodo}/>
+                <Checkbox id={checkboxId} name={checkboxId} checked={isCompleted} handleOnChange={onCompleteTodo}/>
                 <p className="todo-item__text">{text}</p>
             </div>
             <div className="todo-item__col">
