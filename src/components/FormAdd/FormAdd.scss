@@ -1,4 +1,5 @@
 .form-add {
+  position: relative;
   display: flex;
 
   &__input {
@@ -14,6 +15,12 @@
       height: 40px;
       fill: #fff;
     }
+  }
+
+  &__error-mes {
+    position: absolute;
+    top: 105%;
+    left: 5px;
   }
 }
 
@@ -40,5 +47,29 @@
   &--error {
     border-color: #ff0000;
     color: #ff0000;
+  }
+}
+
+.error-mes {
+  font-size: 14px;
+  color: red;
+  opacity: 0;
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active, &-enter-done {
+    opacity: 1;
+    transition: .2s;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+    transition: .2s;
   }
 }

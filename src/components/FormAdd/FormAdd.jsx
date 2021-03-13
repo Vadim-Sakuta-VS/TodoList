@@ -3,9 +3,11 @@ import './FormAdd.scss';
 import sprite from '../../svg/sprite.svg';
 import Button from '../Button/Button';
 import {useState} from 'react';
+import {CSSTransition} from 'react-transition-group';
 
 const FormAdd = ({addTodo}) => {
     let [value, setValue] = useState('');
+    let [isError, setIsError] = useState(false);
 
     const svg = (
         <svg>
@@ -17,23 +19,19 @@ const FormAdd = ({addTodo}) => {
         setValue(e.target.value);
     }
 
-    const onFocusHandler = (e) => {
-        if (e.target.classList.contains('input--error')) {
-            e.target.classList.remove('input--error');
-            setValue('');
-        }
+    const onFocusHandler = () => {
+        isError && setIsError(false);
     }
 
     const submitHandler = (e) => {
         e.preventDefault();
         const todoText = e.target['todo'].value;
 
-        if (todoText) {
+        if (!isError && todoText) {
             addTodo(todoText);
             setValue('');
         } else {
-            e.target['todo'].classList.add('input--error');
-            setValue('Can not be empty!');
+            setIsError(true);
         }
     }
 
@@ -43,12 +41,16 @@ const FormAdd = ({addTodo}) => {
                 type='text'
                 name='todo'
                 placeholder='Add Todo...'
-                className='input form-add__input'
+                className={`input form-add__input ${isError ? 'input--error' : ''}`}
                 value={value}
                 onChange={onChangeHandler}
                 onFocus={onFocusHandler}
+                autoComplete='off'
             />
             <Button class_el='form-add__btn' inner={svg}/>
+            <CSSTransition in={isError} timeout={200} classNames='error-mes' unmountOnExit>
+                <p className='error-mes form-add__error-mes'>Can not be empty!</p>
+            </CSSTransition>
         </form>
     );
 };
